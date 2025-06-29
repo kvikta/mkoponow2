@@ -1,36 +1,32 @@
-/* Apply Background Image with Overlay */
 body {
-  font-family: "Arial", sans-serif;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url("bg.jpg") no-repeat center center/cover;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, rgba(102, 187, 106, 0.8), rgba(67, 160, 71, 0.8)), url("bg.jpg") no-repeat center center/cover;
   min-height: 100vh;
   display: flex;
-  justify-content: center; /* Center content vertically */
-  align-items: center; /* Center content horizontally */
+  justify-content: center;
+  align-items: center;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
-/* Main Container Layout */
 .main-container {
   display: grid;
-  grid-template-columns: 1fr 500px; /* Left content + Form */
+  grid-template-columns: 1fr 500px;
   width: 100%;
   max-width: 1200px;
   align-items: center;
   gap: 40px;
-  padding: 60px; /* Increase padding for better spacing */
-  margin-top: 40px;
-  margin: 40px 0; /* Add space from top and bottom */
+  padding: 60px;
+  margin: 40px 0;
 }
 
-/* Left Section with Content */
 .left-content {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* Align content towards the bottom */
+  justify-content: flex-end;
   padding: 20px;
-  height: 100%; /* Ensure the section takes full height */
+  height: 100%;
 }
 
 .left-content h1 {
@@ -48,23 +44,16 @@ body {
   line-height: 1.6;
 }
 
-/* Form Wrapper */
 .form-wrapper {
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.95
-  ); /* Slightly transparent background */
+  background-color: rgba(255, 255, 255, 0.95);
   margin-top: 40px;
   padding: 40px;
   border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
   width: 100%;
-  max-width: 450px; /* Limit max width for better readability */
+  max-width: 450px;
 }
 
-/* Form Heading */
 .form-wrapper h1 {
   font-size: 28px;
   margin-bottom: 10px;
@@ -80,31 +69,29 @@ body {
   text-align: center;
 }
 
-/* Input, Select, and Button Styling */
 input,
 select {
   width: 100%;
   padding: 14px;
   margin-bottom: 20px;
-  border: 1px solid #ddd;
+  border: 1px solid #E8F5E9;
   border-radius: 8px;
-  background-color: #fafafa;
+  background-color: #E8F5E9;
   font-size: 16px;
   transition: border-color 0.3s;
 }
 
 input:focus,
 select:focus {
-  border-color: #5c67f2;
+  border-color: #2E7D32;
   outline: none;
-  background-color: #f1f1f1;
+  background-color: #C8E6C9;
 }
 
-/* Button Styling */
 button {
   width: 100%;
   padding: 16px;
-  background: linear-gradient(135deg, #6b73ff, #000dff);
+  background: linear-gradient(135deg, #66BB6A, #43A047);
   color: white;
   border: none;
   border-radius: 8px;
@@ -115,17 +102,16 @@ button {
 }
 
 button:hover {
-  background: linear-gradient(135deg, #4a54d1, #1c1f99);
-  transform: scale(1.02); /* Subtle hover effect */
+  background: linear-gradient(135deg, #2E7D32, #1B5E20);
+  transform: scale(1.02);
 }
 
-/* Note and Disclaimer Styling */
 .note {
   margin-top: 10px;
   padding: 12px;
-  border: 1px solid #ddd;
+  border: 1px solid #C8E6C9;
   border-radius: 8px;
-  background-color: #f9f9f9;
+  background-color: #E8F5E9;
   font-size: 14px;
   text-align: center;
   color: #333;
@@ -139,14 +125,16 @@ button:hover {
 }
 
 .disclaimer a {
-  color: #5c67f2;
+  color: #2E7D32;
   text-decoration: none;
   font-weight: bold;
 }
 
-/* Responsive Adjustments */
+.disclaimer a:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 768px) {
-  /* Stack content vertically on mobile */
   .main-container {
     grid-template-columns: 1fr;
     margin-top: 10px;
@@ -154,13 +142,12 @@ button:hover {
     margin: 0;
   }
 
-  /* Hide left content on mobile screens */
   .left-content {
     display: none;
   }
 
   .form-wrapper {
-    width: 100%; /* Full width on mobile */
+    width: 100%;
     max-width: 100%;
   }
 
