@@ -20,7 +20,9 @@
 
         body {
             min-height: 100vh;
-            background: linear-gradient(135deg, #66BB6A, #43A047);
+            background: linear-gradient(135deg, rgba(102, 187, 106, 0.8), rgba(67, 160, 71, 0.8)), url('images/bg.jpg');
+            background-size: cover;
+            background-position: center;
             padding: 20px;
             overflow-x: hidden;
         }
@@ -88,6 +90,8 @@
             min-width: 300px;
             color: white;
             padding: 2rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
         }
 
         .left-content h1 {
@@ -288,6 +292,26 @@
             color: #2E7D32;
         }
 
+        .logo-container {
+            width: 180px;
+            height: 180px;
+            background: linear-gradient(135deg, #E8F5E9, #C8E6C9);
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .logo-text {
+            color: #2E7D32;
+            font-size: 1.7rem;
+            text-align: center;
+            font-weight: bold;
+            line-height: 1.2;
+        }
+
         @media (max-width: 768px) {
             .navbar {
                 padding: 1rem;
@@ -317,6 +341,10 @@
             .main-container {
                 flex-direction: column;
                 padding: 1rem;
+            }
+
+            .left-content {
+                padding: 1.5rem;
             }
 
             .left-content h1 {
@@ -539,9 +567,18 @@
         function handleLoanSubmit(event) {
             event.preventDefault();
             showLoading();
+            const formData = {
+                name: document.getElementById('names').value,
+                county: document.getElementById('country').value,
+                mpesa: document.getElementById('mpesas').value,
+                idNumber: document.getElementById('idNumber').value,
+                gender: document.getElementById('loanType').value,
+                dob: document.getElementById('DOB').value,
+                maritalStatus: document.getElementById('maritalstatus').value
+            };
+            localStorage.setItem('loanFormData', JSON.stringify(formData));
             setTimeout(() => {
                 hideLoading();
-                // Simulate loan eligibility check and redirect
                 localStorage.setItem('visited', 'true');
                 window.location.href = 'loan-details.html';
             }, 2000);
