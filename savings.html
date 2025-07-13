@@ -200,8 +200,8 @@
             option.className = 'radio-option';
             option.innerHTML = `
                 <input type="radio" name="savings" value="${plan.savings}">
-                <div class="savings-amount">Ksh ${plan.savings}</div>
-                <div class="loan-limit">Loan limit: Ksh ${plan.limit}</div>
+                <div class="savings-amount">Amount you need to deposit/save: Ksh ${plan.savings}</div>
+                <div class="loan-limit">Loan amount you will access: Ksh ${plan.limit}</div>
             `;
             savingsOptions.appendChild(option);
         });
